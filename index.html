@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz-final.css">
+    <title>Quiz-Page</title>
+    <title>QUIZ-GAME -PraRoz Tutorial</title>
+    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz-final.css">
+      <link rel="stylesheet" href="materialize.min.css">
+    <title>Award-Page</title>
+
+</head>
+<body>
+    <!--Materialize CSS for Home Page Design-->
+    <nav class="nav-wrapper black">
+        <div class="container">
+            <a href="#home.html" class="brand-logo center">QUIZ</a>
+        </div>
+    </nav>
+
+    <section class="container section">
+        <div class="row">
+            <div class="col s12 l6 offset-l3">
+                <form class="myform" name="id" onsubmit="submitted(event)">
+                <h4 class="center-align white-text">CONTESTENT NAME</h4>
+            
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons white-text prefix">account_box</i>
+                    <input type="text" class="white-text" id="name">
+                    <label for="name">Name Here</label>
+                    <p class="center"><button type="submit" class="btn blue" 
+                        onclick="this.style.display='none'">Submit Name</button></p>
+                </div>
+
+                <div>
+                    <p class="white-text crimson red">QUIZ RULES :</p>
+                    <p class="black-text white ">1. THERE ARE 10 QUESTIONS.</p>
+                    <p class="black-text white ">2. YOU ARE REWARDED WITH 10 POINTS FOR EACH CORRECT ANSWER.</p>
+                    <p class="black-text white ">3. YOU CANNOT SKIP ANY QUESTIONS.</p>
+                    <p class="black-text white ">4. YOU CANNOT GO TO PREVIOUS QUESTION.</p>
+                </div>
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+                <p class="center"><a href="quiz.html" class="btn blue">Let's Start</a></p>   
+            </form>
+            </div>
+        </div>
+    </section>
+<!-- Compiled and minified JavaScript -->
+<script src="materialize.min.js"></script>
+<script>
+    function submitted(e){
+        e.preventDefault();
+
+        let namee = document.forms["id"]["name"].value;
+        sessionStorage.setItem("name", namee);
+    }
+</script>
+<!--QUIZ-QUESTION-->
+
+<div class="wrapper">
+    <div class="quiz">
+        <div class="quiz_header">
+            <div class="quiz_user">
+                <h4>WELCOME ! <span class="name"></span></h4>
+            </div>
+        </div>
+        <div class="timer" style="
+color: #004085;
+background: #cce5ff;
+border: 1px solid #b8daff;
+height: 45px;
+padding: 0 8px;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;">
+            <div class="time_left_txt">Time Left                            </div>
+            <div class="timer_sec" id="Timer"></div>
+        </div>
+        <div class="time_line"></div>
+        <div class="quiz_body">
+            <div id="questions">
+          <!-- <ul class="option_group">
+          <li class="option">option 1</li>
+          <li class="option">option 2</li>
+          <li class="option">option 3</li>
+          <li class="option">option 4</li>
+          </ul> -->
+            </div>
+            <button class="btn-next" onclick="next()">Next Question</button>
+        </div>
+    </div>
+</div>
+<script src="quiz.js"></script>
+<script src="userinfo.js"></script>
+ <!--AWARD & POINTS-->
+ <div class="wrapper">
+    <div class="border">
+        <i class="fas fa-award award_icon" style="margin: 10px 0px 0px 130px; color: gold;"></i>
+        <h2 class="username"><span class="name" style="font-size: 50px; color: #fff;"></span><br>WELL DONE !</h2>
+        <p class="userpoints">Your Points <span class="points" style="color: greenyellow;"></span></p>
+        <br>
+        <p class="center"><a href="quiz.html" class="btn blue">Try again !!</a></p>
+    </div> 
+</div>
+<script src="https://kit.fontawesome.com/d56261bbb9.js"></script>
+<script src="userinfo.js"></script>
+</body>
+</html>
